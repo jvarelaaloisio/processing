@@ -4,6 +4,7 @@ import processing.core.*;
 
 public class main extends PApplet{
 	menu ataques;
+	String[] n_ataques = {"golpe", "frostball", "garrotazo", "tu mami"};
 	public static void main(String []args) {
 		PApplet.main("version09.main");
 	}
@@ -15,7 +16,7 @@ public class main extends PApplet{
 	public void setup() {
 		fill(100);
 		//noStroke();
-		ataques = new menu(0, height-height/4, width/4, height/4, 4, this);
+		ataques = new menu(0, height-height/4, width/4, height/4, 4, n_ataques, this);
 	}
 	
 	public void draw() {
