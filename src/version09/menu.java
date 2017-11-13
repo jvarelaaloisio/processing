@@ -33,15 +33,20 @@ public class menu {
 	}
 	
 	public void dibujar(int i, String info, int filas) {
+		float tamañoTexto = 100 /filas;
+		if(tamañoTexto > 25) tamañoTexto = 25;
 		parent.fill(50, 0, 50);
 		parent.rect(x, y+alto*i, ancho, alto);
 		parent.fill(255);
-		parent.textSize(100/filas);
+		parent.textSize(tamañoTexto);
 		parent.text(info, CENTROX(x, ancho, info), CENTROY(y, i, alto));
 	}
 	
 	public void BuscarErrores() {
-
+		
+		if(filas <= 0) {
+			System.out.println("Error: La variable filas no puede ser <= 0");
+		}
 		if(opciones.length > filas) {
 			System.out.println("Error: Hay mas Opciones que Filas");
 		}

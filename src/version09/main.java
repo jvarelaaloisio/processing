@@ -39,28 +39,34 @@ public class main extends PApplet{
 		menu ataques = new menu(0, height*3/4, width/4, height/4, sAtk.length, sAtk, this);
 		menu stats = new menu(width/4, height*3/4, width*3/4, height/4, sStats.length, sStats, this);
 		textura fondo = new textura(n_fondo, 0, 0, width, height*3/4, this);
+		selector selec = new selector(ataques, this);
+		selec.moverSelector();
 	}
 	
-	/*
+	
+	
 	@Override
-	public void keyPressed(){
-	  if(key == 'R' ||key == 'r'){
-		  
-	  }
-	  if(key == CODED){
-	    if(keyCode == RIGHT){
-	      
-	    }
-	    if(keyCode == LEFT){
-	    	
-	    }
-	    if(keyCode == UP){
-	    	
-	    }
-	  }
-	}
-
 	public void keyReleased(){
+		/*if(key == 'R' ||key == 'r'){
+			
+		}*/
+		if(key == CODED){
+		    if(keyCode == RIGHT){
+		    	
+		    }
+		    if(keyCode == LEFT){
+		    	
+		    }
+		    if(keyCode == UP){
+		    	
+		    }
+		    if(keyCode == DOWN){
+		    	
+		    }
+		}
+	}
+	
+	/*public void keyReleased(){
 	  if(key == CODED){
 	    if(keyCode == RIGHT||keyCode == LEFT)jugador.vx=0;
 	  }
