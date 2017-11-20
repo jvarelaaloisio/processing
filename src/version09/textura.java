@@ -12,7 +12,6 @@ public class textura {
 		alto = temp_alto;
 		ancho = temp_ancho;
 		textura = parent.loadImage(n_textura);
-		dibujar();
 	}
 	
 	public void dibujar() {

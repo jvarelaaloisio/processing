@@ -5,10 +5,9 @@ import processing.core.*;
 public class menu {
 	PApplet parent;
 	float x, y, ancho, alto, tt;
-	int filas;
+	int filas, id;
 	String[] nombres;
 	ArrayList <opcion> opciones;
-	
 	
 	/*float CENTROY(float y, int i, float alto) {
 		return(y + alto * i + alto*4/6);
@@ -17,25 +16,36 @@ public class menu {
 		return(x+ (ancho - parent.textWidth(info))/2);
 	}*/
 	
-	public menu(float temp_x, float temp_y, float temp_ancho, float temp_alto, int temp_filas, String[] temp_nombres, PApplet P) {
+	public menu(float temp_x, float temp_y, float temp_ancho, float temp_alto, int temp_id, int temp_filas, String[] temp_nombres, PApplet P) {
 		parent = P;
 		x = temp_x;
 		y = temp_y;
 		ancho = temp_ancho;
-		alto = temp_alto/temp_filas;
+		alto = temp_alto;
+		id = temp_id;
 		filas = temp_filas;
 		nombres = temp_nombres;
 		BuscarErrores();
-		tt = 100 /temp_filas;
-		if(tt > 25) tt = 25;
 		opciones = new ArrayList <opcion>(temp_filas);
 	}
 	
 	public void genselecs() {
+		tt = 100 /filas;
+		if(tt > 25) tt = 25;
 		for(int i=0; i<filas; i++) {
-			opciones.get(i) = new opcion(x, y + alto/filas*i, ancho, alto, tt, nombres[i], parent);
+			opcion nuevaOp = new opcion(x, (y + alto/filas*i), ancho, (alto/filas), (id+i+1), tt, nombres[i], parent);
+			opciones.add(nuevaOp);
 			opciones.get(i).dibujar();
 		}
+	}
+	
+	public int menu_selec() {
+		for(int i=0; i<filas; i++) {
+			if(opciones.get(i).op_selec() == 2) {
+				return (opciones.get(i).id);
+			}
+		}
+		return 0;
 	}
 	
 	public void BuscarErrores() {

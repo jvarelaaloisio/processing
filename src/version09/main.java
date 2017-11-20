@@ -5,16 +5,19 @@ import processing.core.*;
 public class main extends PApplet{
 	
 	//-----------------------------------------------------------------------------------------------------
+	int id_ataques = 100, id_stats = 200;
 	String[] sAtk = {"A", "B", "C", "D"};
 	String[] sStats = {"vida: 20/20", "mana: 10/10"};
-	String n_fondo = "fondo.jpg", n_botones="botones.png";
+	String n_fondo = "fondo.jpg";
+	static String n_botones="botones.png";
 	//-----------------------------------------------------------------------------------------------------
 	
 	public static void main(String []args) {
 		PApplet.main("version09.main");
 	}
 	
-	int estado = 0;
+	int estado = 0, estado_mouse = 0;
+	
 	
 	
 	public void settings() {
@@ -36,17 +39,31 @@ public class main extends PApplet{
 	
 	public void menu_Habilidades(String[] sAtk) {
 		stroke(0);
-		menu ataques = new menu(0, height*3/4, width/4, height/4, sAtk.length, sAtk, this);
-		ataques.genselecs();
-		menu stats = new menu(width/4, height*3/4, width*3/4, height/4, sStats.length, sStats, this);
+		int at_selec, stats_selec;
 		textura fondo = new textura(n_fondo, 0, 0, width, height*3/4, this);
+		menu ataques = new menu(0, height*3/4, width/4, height/4, id_ataques, sAtk.length, sAtk, this);
+		menu stats = new menu(width/4, height*3/4, width*3/4, height/4, id_stats, sStats.length, sStats, this);
+		ataques.genselecs();
+		stats.genselecs();
+		fondo.dibujar();
+		if(estado_mouse == 37) {
+			at_selec = ataques.menu_selec();
+			if(at_selec > 0) {
+				System.out.print(at_selec);
+			}
+			stats_selec = stats.menu_selec();
+			if(stats_selec > 0) {
+				System.out.print(stats_selec);
+			}
+			estado_mouse = 0;
+		}
 	}
 	
-	
-	public static int Mizq() {
-		return LEFT;
+	public void mouseClicked() {
+		estado_mouse = mouseButton;
 	}
-	/*@Override
+	/*
+	@Override
 	public void keyReleased(){
 		if(key == 'R' ||key == 'r'){
 			
