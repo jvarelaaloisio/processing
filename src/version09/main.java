@@ -39,17 +39,15 @@ public class main extends PApplet{
 		menu ataques = new menu(0, height*3/4, width/4, height/4, sAtk.length, sAtk, this);
 		menu stats = new menu(width/4, height*3/4, width*3/4, height/4, sStats.length, sStats, this);
 		textura fondo = new textura(n_fondo, 0, 0, width, height*3/4, this);
-		selector selec = new selector(ataques, this);
-		selec.moverSelector();
 	}
 	
 	
 	
-	@Override
+	/*@Override
 	public void keyReleased(){
-		/*if(key == 'R' ||key == 'r'){
+		if(key == 'R' ||key == 'r'){
 			
-		}*/
+		}
 		if(key == CODED){
 		    if(keyCode == RIGHT){
 		    	
