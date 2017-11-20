@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import processing.core.*;
 
 
-public class main_juego extends PApplet{
+public class graficos extends PApplet{
 	
 	/*-----------------------------------------------------------------------------------------------------
 	int id_ataques = 100, id_stats = 200;
@@ -14,38 +14,12 @@ public class main_juego extends PApplet{
 	static String n_botones="botones.png";
 	//-----------------------------------------------------------------------------------------------------*/
 	
-	public main_juego() {
-		PApplet.main("version09.main");
+	public graficos() {
+		PApplet.main("version09.graficos");
 	}
 	
 	int estado_mouse = 0;
 	
-	
-	
-	public void settings() {
-		size(1280,720);
-	}
-	
-	public void setup() {
-		fill(100);
-		noStroke();
-	}
-	
-	public void preparar() {
-		settings();
-		setup();
-	}
-	
-	/*public void draw() {
-		int estado = 0;
-		switch(estado) {
-		case 0:
-			menu_Habilidades(sAtk, sStats, n_fondo, id_stats, id_ataques);
-		break;
-		}
-		
-	}*/
-
 	
 	public void verificarclics(ArrayList <menu> menues) {
 		if(estado_mouse == 37) {
