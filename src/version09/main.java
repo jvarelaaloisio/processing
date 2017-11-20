@@ -42,7 +42,9 @@ public class main extends PApplet{
 	}
 	
 	
-	
+	public static int Mizq() {
+		return LEFT;
+	}
 	/*@Override
 	public void keyReleased(){
 		if(key == 'R' ||key == 'r'){

@@ -32,7 +32,7 @@ public class menu {
 		float tamañoTexto = 100 /filas;
 		if(tamañoTexto > 25) tamañoTexto = 25;
 		for(int i=0; i<filas; i++) {
-			opciones[i] = new opcion(x, y + alto/filas*i, ancho, alto/filas, tamañoTexto, nombres[i], this.parent);
+			opciones[i] = new opcion(x, y + alto/filas*i, ancho, alto/filas, tamañoTexto, nombres[i], parent);
 			opciones[i].dibujar();
 		}
 	}
