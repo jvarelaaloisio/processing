@@ -18,7 +18,7 @@ public class main extends PApplet{
 		PApplet.main("version09.main");
 	}
 	
-	int estado = 0, estado_mouse = 0;
+	int estado_mouse = 0;
 	
 	
 	
@@ -36,13 +36,15 @@ public class main extends PApplet{
 		setup();
 	}
 	
-	public void draw() {
+	/*public void kanvas() {
+		int estado = 0;
 		switch(estado) {
 		case 0:
-			menu_Habilidades(sAtk);
+			menu_Habilidades(sAtk, sStats, n_fondo, id_stats, id_ataques);
+		break;
 		}
 		
-	}
+	}*/
 
 	
 	public void verificarclics(ArrayList <menu> menues) {
@@ -58,7 +60,7 @@ public class main extends PApplet{
 		}
 	}
 	
-	public void menu_Habilidades(String[] sAtk) {
+	public void menu_Habilidades(String[] sAtk, String[] sStats, String n_fondo, int id_stats, int id_ataques) {
 		stroke(0);
 		ArrayList <menu> menues = new ArrayList <menu>();
 		textura fondo = new textura(n_fondo, 0, 0, width, height*3/4, this);
