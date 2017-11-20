@@ -5,7 +5,7 @@ import processing.core.*;
 
 
 public class graficos extends PApplet{
-	
+	PApplet parent;
 	/*-----------------------------------------------------------------------------------------------------
 	int id_ataques = 100, id_stats = 200;
 	String[] sAtk = {"A", "B", "C", "D"};
@@ -14,8 +14,8 @@ public class graficos extends PApplet{
 	static String n_botones="botones.png";
 	//-----------------------------------------------------------------------------------------------------*/
 	
-	public graficos() {
-		PApplet.main("version09.graficos");
+	public graficos(PApplet P) {
+		parent = P;
 	}
 	
 	int estado_mouse = 0;
@@ -37,10 +37,10 @@ public class graficos extends PApplet{
 	public void menu_Habilidades(String[] sAtk, String[] sStats, String n_fondo, int id_stats, int id_ataques) {
 		stroke(0);
 		ArrayList <menu> menues = new ArrayList <menu>();
-		textura fondo = new textura(n_fondo, 0, 0, width, height*3/4, this);
-		menu ataques = new menu(0, height*3/4, width/4, height/4, id_ataques, sAtk.length, sAtk, this);
+		textura fondo = new textura(n_fondo, 0, 0, width, height*3/4, parent);
+		menu ataques = new menu(0, height*3/4, width/4, height/4, id_ataques, sAtk.length, sAtk, parent);
 		menues.add(ataques);
-		menu stats = new menu(width/4, height*3/4, width*3/4, height/4, id_stats, sStats.length, sStats, this);
+		menu stats = new menu(width/4, height*3/4, width*3/4, height/4, id_stats, sStats.length, sStats, parent);
 		menues.add(stats);
 		ataques.genselecs();
 		stats.genselecs();
