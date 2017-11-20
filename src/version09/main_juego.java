@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import processing.core.*;
 
 
-public class main extends PApplet{
+public class main_juego extends PApplet{
 	
-	//-----------------------------------------------------------------------------------------------------
+	/*-----------------------------------------------------------------------------------------------------
 	int id_ataques = 100, id_stats = 200;
 	String[] sAtk = {"A", "B", "C", "D"};
 	String[] sStats = {"vida: 20/20", "mana: 10/10"};
 	String n_fondo = "fondo.jpg";
 	static String n_botones="botones.png";
-	//-----------------------------------------------------------------------------------------------------
+	//-----------------------------------------------------------------------------------------------------*/
 	
-	public static void main(String []args) {
+	public main_juego() {
 		PApplet.main("version09.main");
 	}
 	
@@ -36,7 +36,7 @@ public class main extends PApplet{
 		setup();
 	}
 	
-	/*public void kanvas() {
+	/*public void draw() {
 		int estado = 0;
 		switch(estado) {
 		case 0:
