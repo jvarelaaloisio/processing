@@ -34,13 +34,13 @@ public class graficos extends PApplet{
 		}
 	}
 	
-	public void menu_Habilidades(String[] sAtk, String[] sStats, String n_fondo, int id_stats, int id_ataques) {
+	public void menu_Habilidades(String[] sAtk, String[] sStats, String n_fondo, int id_stats, int id_ataques, float ancho, float alto) {
 		parent.stroke(0);
 		ArrayList <menu> menues = new ArrayList <menu>();
-		textura fondo = new textura(n_fondo, 0, 0, width, height*3/4, parent);
-		menu ataques = new menu(0, height*3/4, width/4, height/4, id_ataques, sAtk.length, sAtk, parent);
+		textura fondo = new textura(n_fondo, 0, 0, ancho, alto*3/4, parent);
+		menu ataques = new menu(0, alto*3/4, ancho/4, alto/4, id_ataques, sAtk.length, sAtk, parent);
 		menues.add(ataques);
-		menu stats = new menu(width/4, height*3/4, width*3/4, height/4, id_stats, sStats.length, sStats, parent);
+		menu stats = new menu(ancho/4, alto*3/4, ancho*3/4, alto/4, id_stats, sStats.length, sStats, parent);
 		menues.add(stats);
 		ataques.genselecs();
 		stats.genselecs();
