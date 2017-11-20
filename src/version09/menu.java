@@ -1,12 +1,13 @@
 package version09;
+import java.util.ArrayList;
 import processing.core.*;
 
 public class menu {
 	PApplet parent;
-	float x, y, ancho, alto;
+	float x, y, ancho, alto, tt;
 	int filas;
 	String[] nombres;
-	opcion[] opciones;
+	ArrayList <opcion> opciones;
 	
 	
 	/*float CENTROY(float y, int i, float alto) {
@@ -25,15 +26,15 @@ public class menu {
 		filas = temp_filas;
 		nombres = temp_nombres;
 		BuscarErrores();
-		genselecs();
+		tt = 100 /temp_filas;
+		if(tt > 25) tt = 25;
+		opciones = new ArrayList <opcion>(temp_filas);
 	}
 	
 	public void genselecs() {
-		float tamañoTexto = 100 /filas;
-		if(tamañoTexto > 25) tamañoTexto = 25;
 		for(int i=0; i<filas; i++) {
-			opciones[i] = new opcion(x, y + alto/filas*i, ancho, alto/filas, tamañoTexto, nombres[i], parent);
-			opciones[i].dibujar();
+			opciones.get(i) = new opcion(x, y + alto/filas*i, ancho, alto, tt, nombres[i], parent);
+			opciones.get(i).dibujar();
 		}
 	}
 	

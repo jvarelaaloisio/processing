@@ -37,6 +37,7 @@ public class main extends PApplet{
 	public void menu_Habilidades(String[] sAtk) {
 		stroke(0);
 		menu ataques = new menu(0, height*3/4, width/4, height/4, sAtk.length, sAtk, this);
+		ataques.genselecs();
 		menu stats = new menu(width/4, height*3/4, width*3/4, height/4, sStats.length, sStats, this);
 		textura fondo = new textura(n_fondo, 0, 0, width, height*3/4, this);
 	}

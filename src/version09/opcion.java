@@ -16,31 +16,17 @@ public class opcion {
 		tamañoTexto = temp_tTexto;
 		texto = temp_texto;
 	}
-	
-	public void dibujar() {
-		/*int selec = seleccionada();
-		if(selec > 0) {
-			parent.fill(255, 255, 255);
-			if(selec == 2) parent.fill(100, 100, 100);
-			else if(selec == 3) parent.fill(200, 50, 200);
-		}
-		else */parent.fill(50, 0, 50);
-		parent.rect(x, y, ancho, alto);
-		parent.fill(255);
-		parent.textSize(tamañoTexto);
-		parent.text(texto, CENTROX(), CENTROY());
-	}
-	
+
 	float CENTROY() {
 		return(alto*4/6);
 	}
 	float CENTROX() {
 		return(x+ (ancho - parent.textWidth(texto))/2);
 	}
-
-	/*public int seleccionada() {
+	
+	public int seleccionada() {
 		float m_x = parent.mouseX;
-		float m_y = parent.mouseX;
+		float m_y = parent.mouseY;
 		if(m_x >= x && m_x <= x+ancho){
 			if(m_y >= y && m_y <= y+alto){
 				if(parent.mousePressed) {
@@ -51,5 +37,18 @@ public class opcion {
 			}
 		}
 		return 0;
-	}*/
+	}
+	public void dibujar() {
+		int selec = seleccionada();
+		if(selec > 0) {
+			parent.fill(255, 255, 255);
+			if(selec == 2) parent.fill(100, 100, 100);
+			else if(selec == 3) parent.fill(200, 50, 200);
+		}
+		else parent.fill(50, 0, 50);
+		parent.rect(x, y, ancho, alto);
+		parent.fill(255);
+		parent.textSize(tamañoTexto);
+		parent.text(texto, CENTROX(), CENTROY());
+	}	
 }
